@@ -1,12 +1,12 @@
 # EcomForge API
 
-Backend compacto, limpo e funcional para e-commerce, construído como um **Monolito Modular** com influência clara de **Clean Architecture**.
+Backend compacto, limpo e funcional para e-commerce, construído como um **Monolito Modular** + **Clean Architecture**.
 
 O objetivo deste boilerplate é servir como base profissional para portfólio: simples o suficiente para entender rapidamente, organizado o suficiente para crescer sem virar uma massa acoplada.
 
 ## Stack
 
-- ASP.NET Core 9 com Controllers
+- ASP.NET Core 9
 - Entity Framework Core
 - PostgreSQL
 - Redis para carrinho
