@@ -1,0 +1,48 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcomForge.Api", "src\EcomForge.Api\EcomForge.Api.csproj", "{56B07931-8F08-48F9-9B43-39AA0CC3EAC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcomForge.Application", "src\EcomForge.Application\EcomForge.Application.csproj", "{B67C3E44-05CF-4C30-A601-6A91DDE9A58D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcomForge.Common", "src\EcomForge.Common\EcomForge.Common.csproj", "{D10C8B9F-016E-4E6D-8ACB-32C3C2C649D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcomForge.Domain", "src\EcomForge.Domain\EcomForge.Domain.csproj", "{814B8197-7664-4A3F-B59E-D2CE96F66C8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcomForge.Infrastructure", "src\EcomForge.Infrastructure\EcomForge.Infrastructure.csproj", "{44D3C37F-F917-43D0-A7AD-B8F0927E6E79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcomForge.Modules", "src\EcomForge.Modules\EcomForge.Modules.csproj", "{268721DB-9620-489F-BED8-E863387C283E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{56B07931-8F08-48F9-9B43-39AA0CC3EAC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56B07931-8F08-48F9-9B43-39AA0CC3EAC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56B07931-8F08-48F9-9B43-39AA0CC3EAC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56B07931-8F08-48F9-9B43-39AA0CC3EAC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B67C3E44-05CF-4C30-A601-6A91DDE9A58D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B67C3E44-05CF-4C30-A601-6A91DDE9A58D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B67C3E44-05CF-4C30-A601-6A91DDE9A58D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B67C3E44-05CF-4C30-A601-6A91DDE9A58D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D10C8B9F-016E-4E6D-8ACB-32C3C2C649D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D10C8B9F-016E-4E6D-8ACB-32C3C2C649D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D10C8B9F-016E-4E6D-8ACB-32C3C2C649D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D10C8B9F-016E-4E6D-8ACB-32C3C2C649D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{814B8197-7664-4A3F-B59E-D2CE96F66C8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{814B8197-7664-4A3F-B59E-D2CE96F66C8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{814B8197-7664-4A3F-B59E-D2CE96F66C8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{814B8197-7664-4A3F-B59E-D2CE96F66C8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44D3C37F-F917-43D0-A7AD-B8F0927E6E79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44D3C37F-F917-43D0-A7AD-B8F0927E6E79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44D3C37F-F917-43D0-A7AD-B8F0927E6E79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44D3C37F-F917-43D0-A7AD-B8F0927E6E79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{268721DB-9620-489F-BED8-E863387C283E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{268721DB-9620-489F-BED8-E863387C283E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{268721DB-9620-489F-BED8-E863387C283E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{268721DB-9620-489F-BED8-E863387C283E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
