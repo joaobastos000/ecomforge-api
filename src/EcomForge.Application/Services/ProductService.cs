@@ -49,6 +49,12 @@ public sealed class ProductService(IAppDbContext dbContext)
             return Result.Failure(new Error("Products.NotFound", "Product not found."));
         }
 
+        var categoryExists = await dbContext.Categories.AnyAsync(x => x.Id == request.CategoryId, cancellationToken);
+        if (!categoryExists)
+        {
+            return Result.Failure(new Error("Categories.NotFound", "Category not found."));
+        }
+
         product.Update(request.Name, request.Description, request.Price, request.Stock, request.CategoryId);
         await dbContext.SaveChangesAsync(cancellationToken);
         return Result.Success();

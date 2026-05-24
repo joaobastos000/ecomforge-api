@@ -16,6 +16,14 @@ public sealed class CategoryService(IAppDbContext dbContext)
             .ToListAsync(cancellationToken);
     }
 
+    public async Task<Result<CategoryDto>> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
+    {
+        var category = await dbContext.Categories.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
+        return category is null
+            ? Result<CategoryDto>.Failure(new Error("Categories.NotFound", "Category not found."))
+            : Result<CategoryDto>.Success(new CategoryDto(category.Id, category.Name, category.Description));
+    }
+
     public async Task<Result<CategoryDto>> CreateAsync(CreateCategoryRequest request, CancellationToken cancellationToken = default)
     {
         var category = new Category(request.Name, request.Description);

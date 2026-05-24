@@ -2,15 +2,12 @@ using EcomForge.Application.Abstractions;
 using EcomForge.Application.DTOs.Auth;
 using EcomForge.Common.Results;
 using EcomForge.Domain.Entities;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace EcomForge.Application.Services;
 
-public sealed class AuthService(IAppDbContext dbContext, IJwtTokenService jwtTokenService)
+public sealed class AuthService(IAppDbContext dbContext, IJwtTokenService jwtTokenService, IPasswordService passwordService)
 {
-    private readonly PasswordHasher<Customer> _passwordHasher = new();
-
     public async Task<Result<AuthResponse>> RegisterAsync(RegisterRequest request, CancellationToken cancellationToken = default)
     {
         var email = request.Email.ToLowerInvariant();
@@ -20,9 +17,7 @@ public sealed class AuthService(IAppDbContext dbContext, IJwtTokenService jwtTok
             return Result<AuthResponse>.Failure(new Error("Auth.EmailInUse", "Email already registered."));
         }
 
-        var customer = new Customer(request.Name, email, string.Empty);
-        var hash = _passwordHasher.HashPassword(customer, request.Password);
-        customer = new Customer(request.Name, email, hash);
+        var customer = new Customer(request.Name, email, passwordService.Hash(request.Password));
 
         SetRefreshToken(customer);
         dbContext.Customers.Add(customer);
@@ -40,8 +35,7 @@ public sealed class AuthService(IAppDbContext dbContext, IJwtTokenService jwtTok
             return Result<AuthResponse>.Failure(new Error("Auth.InvalidCredentials", "Invalid credentials."));
         }
 
-        var verification = _passwordHasher.VerifyHashedPassword(customer, customer.PasswordHash, request.Password);
-        if (verification == PasswordVerificationResult.Failed)
+        if (!passwordService.Verify(customer.PasswordHash, request.Password))
         {
             return Result<AuthResponse>.Failure(new Error("Auth.InvalidCredentials", "Invalid credentials."));
         }
